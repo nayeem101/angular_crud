@@ -1,0 +1,61 @@
+<!-- <h2 class="my-2" *ngIf="dataFromChild">
+  {{ dataFromChild?.name + " " + dataFromChild?.gender }}
+</h2> -->
+
+<div class="form-group w-75 mx-auto">
+  <input
+    type="text"
+    name="searchTerm"
+    [(ngModel)]="searchTerm"
+    id="search"
+    class="form-control"
+    placeholder="Search By Name"
+  />
+</div>
+<h2 class="text-danger text-center" *ngIf="error">
+  {{ error }}
+</h2>
+
+<div
+  class="alert alert-warning myalert py-2 px-3 border-2 shadow"
+  role="alert"
+  *ngIf="showAlert"
+>
+  <h4 class="m-0">{{ alertMsg }}</h4>
+  <button
+    (click)="showAlert = false"
+    class="btn-close"
+    aria-label="Close"
+  ></button>
+</div>
+
+<div class="d-flex justify-content-center flex-wrap mt-2">
+  <div *ngFor="let employee of filteredEmployees" class="m-2 w-75">
+    <app-display-employee
+      [employee]="employee"
+      [searchTerm]="searchTerm"
+      (notifyDelete)="onDeleteNotification($event)"
+    ></app-display-employee>
+  </div>
+</div>
+
+<!-- <div class="d-flex justify-content-center flex-wrap mt-4">
+  <div *ngFor="let employee of employees">
+    <div (click)="h1Var.innerText = childComponent.getEmployeeName()">
+      <app-display-employee
+        class="card"
+        [employee]="employee"
+        #childComponent
+        (notify)="handleNotify($event)"
+      ></app-display-employee>
+    </div>
+  </div>
+</div> -->
+
+<!-- <button (click)="nextEmployee()" class="btn btn-primary my-2">
+  Next Employee
+</button>
+<app-display-employee
+  class="card"
+  [employee]="employeeToDisplay"
+></app-display-employee> -->

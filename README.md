@@ -1,5 +1,7 @@
 # AngularCrud
 
+## Tutorial followed [Kudevenkat Angular CRUD Playlist](https://youtu.be/JYPyy-hvjYc)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
@@ -9,6 +11,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Server
+
+Run `npm run server` to run the json-server for fake rest api. the db.json file holds all the data. and the server runs on `http://localhost:3000/employees`
 
 ## Build
 

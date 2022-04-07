@@ -1,0 +1,14 @@
+.pointer-cursor {
+  cursor: pointer;
+}
+
+.myalert {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 211;
+  margin: 0;
+}

@@ -1,0 +1,68 @@
+<app-accordion
+  [title]="employee.name"
+  [isHidden]="false"
+  [hasJustViewed]="selectedEmployee === employee.id"
+>
+  <div class="row myCardBody">
+    <div class="col-md-4">
+      <img
+        [src]="employee.photoPath"
+        alt="{{ employee.name }}"
+        class="img-thumbnail"
+        [ngStyle]="{ width: '200px' }"
+      />
+    </div>
+    <div class="col-md-8 d-flex align-items-center">
+      <table class="table table-borderless">
+        <tr>
+          <th>Gender:</th>
+          <td>{{ employee.gender | titlecase }}</td>
+        </tr>
+        <tr>
+          <th>Contact Preference:</th>
+          <td>{{ employee.contactPref }}</td>
+        </tr>
+        <tr>
+          <th>Contact:</th>
+          <td>
+            {{ employee.phoneNumber ? employee.phoneNumber : employee.email }}
+          </td>
+        </tr>
+        <tr>
+          <th>Department:</th>
+          <td [ngSwitch]="employee.department">
+            <span class="p-0" *ngSwitchCase="1">IT</span>
+            <span class="p-0" *ngSwitchCase="2">HR</span>
+            <span class="p-0" *ngSwitchCase="3">Management</span>
+            <span class="p-0" *ngSwitchCase="4">Help Desk</span>
+            <span class="p-0" *ngSwitchDefault>N/A</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="myCardFooter">
+    <button class="btn btn-secondary btn-sm mx-2" (click)="viewEmployee()">
+      View
+    </button>
+    <button class="btn btn-warning btn-sm mx-2" (click)="editEmployee()">
+      Edit
+    </button>
+    <span *ngIf="confirmDelete">
+      <span>Are you sure you want to delete?</span>
+      <button class="btn btn-danger btn-sm mx-2" (click)="deleteEmployee()">
+        Yes
+      </button>
+      <button class="btn btn-primary btn-sm" (click)="confirmDelete = false">
+        No
+      </button>
+    </span>
+    <button
+      *ngIf="!confirmDelete"
+      class="btn btn-danger btn-sm mx-2"
+      (click)="confirmDelete = true"
+    >
+      Delete
+    </button>
+  </div>
+</app-accordion>

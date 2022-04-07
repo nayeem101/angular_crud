@@ -1,0 +1,39 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Mark",
+      "gender": "male",
+      "contactPref": "email",
+      "email": "mark@abc.com",
+      "dateOfBirth": "1988-11-24T18:00:00.000Z",
+      "department": "1",
+      "isActive": true,
+      "photoPath": "assets/images/profile.png"
+    },
+    {
+      "id": 2,
+      "name": "Sarah",
+      "gender": "female",
+      "contactPref": "phone",
+      "phoneNumber": "01823523512",
+      "dateOfBirth": "1991-12-24T18:00:00.000Z",
+      "department": "2",
+      "isActive": true,
+      "photoPath": "assets/images/employee.png",
+      "password": "456",
+      "confirmPassword": "456"
+    },
+    {
+      "id": 3,
+      "name": "John",
+      "gender": "male",
+      "contactPref": "phone",
+      "phoneNumber": "019967871",
+      "dateOfBirth": "1989-05-04T18:00:00.000Z",
+      "department": "3",
+      "isActive": true,
+      "photoPath": "assets/images/officer.png"
+    }
+  ]
+}
